@@ -107,7 +107,7 @@
 .tl-mobile { display: none; }
 
 /* ===== Life gallery ===== */
-.life { position: relative; padding: 90px 0 40px; text-align: center; background: linear-gradient(180deg, var(--cream) 0%, #FCEEE4 100%); }
+.life { position: relative; padding: 90px 0 40px; text-align: center; background: linear-gradient(180deg, var(--cream) 0%, var(--cream) 100%); }
 .life h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(30px, 4vw, 52px); margin: 0 auto; line-height: 1.14; max-width: 760px; }
 .life h2 .hl { background: var(--pink); padding: 2px 14px; }
 .life-fan { position: relative; width: min(1100px, 96vw); height: 440px; margin: 50px auto 0; }
@@ -115,16 +115,18 @@
 .fan-card img { width: 100%; height: 100%; object-fit: cover; display:block; border-radius: 2px; }
 
 /* ===== Contact / Footer ===== */
-.pre-contact { text-align: center; padding: 60px 24px 0; }
+.pre-contact { text-align: center; padding: 60px 24px 0; background: linear-gradient(180deg, var(--cream) 0%, #FEEDE1 100%); }
 .pre-contact p { font-family: var(--sans); font-size: 16px; color: #4a453e; line-height: 1.6; max-width: 500px; margin: 0 auto; }
 .pre-contact p b { font-weight: 700; }
-.contact { position: relative; margin-top: 40px; padding: 120px 24px 40px; text-align: center; min-height: 560px; background-size: cover; background-position: center 34%; }
-.contact .c-lead { font-family: var(--sans); font-size: 16px; color: #3a352e; max-width: 440px; margin: 0 auto 24px; line-height: 1.55; }
-.contact h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(44px, 6.4vw, 92px); margin: 24px 0 0; color: var(--ink); line-height: .96; }
-.socials { display: flex; gap: 26px; justify-content: center; margin-top: 30px; }
+.contact { position: relative; margin-top: 40px; text-align: center; overflow: hidden; background-size: cover; background-position: center top; background-repeat: no-repeat; aspect-ratio: 1440 / 741; min-height: 620px; display: flex; flex-direction: column; align-items: center; }
+.contact::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 130px; background: linear-gradient(180deg, #FEEDE1 0%, rgba(254,237,225,0) 100%); z-index: 1; pointer-events: none; }
+.contact > * { position: relative; z-index: 2; }
+.contact .c-lead { font-family: var(--sans); font-size: 16px; color: #3a352e; max-width: 440px; margin: 15% auto 24px; line-height: 1.55; }
+.contact h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(44px, 6.4vw, 92px); margin: 4% 0 0; color: var(--ink); line-height: .96; }
+.socials { display: flex; gap: 26px; justify-content: center; margin-top: 26px; }
 .socials a { color: var(--ink); transition: transform .18s ease, color .18s ease; display:inline-flex; }
 .socials a:hover { transform: translateY(-3px); color: var(--terra); }
-.copyright { font-family: var(--sans); font-size: 15px; color: #3a352e; margin-top: 40px; }
+.copyright { font-family: var(--sans); font-size: 15px; color: #3a352e; margin-top: auto; margin-bottom: 3%; padding-top: 30px; }
 
 /* Reveal animation */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }

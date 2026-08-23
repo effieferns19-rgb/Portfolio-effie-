@@ -13,16 +13,12 @@ const NotionIcon = ({ size = 24 }) => (
 const Contact = () => {
   return (
     <>
-      <div className="pre-contact grid-bg" style={{ paddingBottom: 20 }}>
+      <div className="pre-contact" style={{ paddingBottom: 20 }}>
         <p>
           The side of me that doesn’t show up in a portfolio — a little bit of <b>everything that makes</b> me, me.
         </p>
       </div>
-      <section
-        className="contact"
-        id="contact"
-        style={{ backgroundImage: 'url(/images/footer_sky.jpg)' }}
-      >
+      <section className="contact" id="contact" style={{ backgroundImage: 'url(/images/footer_sky.png)' }}>
         <p className="c-lead">
           If you’re looking for a designer who’s curious, thoughtful, and always up for a challenge — let’s talk.
         </p>
