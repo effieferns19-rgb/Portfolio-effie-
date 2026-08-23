@@ -6,6 +6,7 @@ const FeaturedWork = () => {
   useReveal();
   return (
     <section className="work" id="work">
+      <div className="work-bg" style={{ backgroundImage: 'url(/images/work_sky.png)' }} />
       <div className="section-head">
         <h2>Featured Work</h2>
         <p>A little collection of selected case studies showcasing how I solve complex challenges across projects</p>
