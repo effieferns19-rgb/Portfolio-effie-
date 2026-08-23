@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { TIMELINE } from '../data/mock';
 
 const STRIP_W = 2500;
-const STRIP_H = 720;
+const STRIP_H = 760;
+const YOFF = 48;
 
 // Layout of each milestone inside the 2400 x 720 strip
 const POS = [
@@ -52,11 +53,7 @@ const Timeline = () => {
 
   const maxShift = Math.max(STRIP_W - vw, 0);
   const tx = -progress * maxShift;
-  const isActive = (i) => {
-    if (maxShift <= 0) return true;
-    const th = Math.min(Math.max((POS[i].anchor - vw * 0.82) / maxShift, 0), 1);
-    return progress >= th - 0.001;
-  };
+  const focusIndex = Math.min(Math.max(Math.round(progress * (POS.length - 1)), 0), POS.length - 1);
 
   return (
     <section className="timeline" id="timeline">
@@ -64,7 +61,9 @@ const Timeline = () => {
         <div className="tl-sticky">
           <div className="tl-strip" style={{ transform: `translate3d(${tx}px,0,0)` }}>
             <svg className="tl-strip-svg" viewBox={`0 0 ${STRIP_W} ${STRIP_H}`} preserveAspectRatio="none">
-              <path className="tl-dash" d={PATH_D} />
+              <g transform={`translate(0, ${YOFF})`}>
+                <path className="tl-dash" d={PATH_D} />
+              </g>
             </svg>
 
             <div className="tl-strip-head">
@@ -76,23 +75,23 @@ const Timeline = () => {
 
             {TIMELINE.map((t, i) => {
               const p = POS[i];
-              const act = isActive(i) ? 'active' : '';
+              const foc = focusIndex === i ? 'focus' : '';
               return (
                 <React.Fragment key={i}>
-                  <span className={`tl-dot ${act}`} style={{ left: p.dot.x - 7, top: p.dot.y - 7 }} />
+                  <span className="tl-dot" style={{ left: p.dot.x - 7, top: p.dot.y + YOFF - 7 }} />
                   {p.photos.map((ph, j) => (
                     <div
                       key={j}
-                      className={`tl-photo ${act}`}
-                      style={{ left: ph.x, top: ph.y, width: ph.w, height: ph.h, transform: `rotate(${ph.rot}deg)`, zIndex: ph.peek ? 1 : 2 }}
+                      className={`tl-photo ${foc}`}
+                      style={{ left: ph.x, top: ph.y + YOFF, width: ph.w, height: ph.h, transform: `rotate(${ph.rot}deg)`, zIndex: ph.peek ? 1 : 2 }}
                     >
                       <img src={t.photos[j]} alt="" />
                       {!ph.peek && t.caption && <span className="cap">{t.caption}</span>}
                     </div>
                   ))}
                   <div
-                    className={`tl-node ${act}`}
-                    style={{ left: p.node.x, top: p.node.y, width: p.node.w, textAlign: p.node.align }}
+                    className={`tl-node ${foc}`}
+                    style={{ left: p.node.x, top: p.node.y + YOFF, width: p.node.w, textAlign: p.node.align }}
                   >
                     <span className="tl-badge">{t.badge}</span>
                     <h4>{t.title}</h4>
