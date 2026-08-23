@@ -4,21 +4,22 @@ import { LIFE_PHOTOS } from '../data/mock';
 
 // x/y/r = fanned (hover) target, sr = stacked default rotation
 const FAN = [
-  { x: -430, y: 40, r: -14, sr: -7, z: 1, w: 200, h: 262 },
-  { x: -214, y: -2, r: -7, sr: -3.5, z: 3, w: 212, h: 282 },
-  { x: 0, y: -22, r: 0, sr: 0, z: 6, w: 224, h: 300 },
-  { x: 214, y: -2, r: 7, sr: 3.5, z: 3, w: 212, h: 282 },
-  { x: 430, y: 40, r: 14, sr: 7, z: 1, w: 200, h: 262 },
+  { x: -330, y: 50, r: -15, sr: -6, z: 1, w: 200, h: 262 },
+  { x: -168, y: 8, r: -8, sr: -3, z: 3, w: 212, h: 282 },
+  { x: 0, y: -16, r: 0, sr: 0, z: 6, w: 224, h: 300 },
+  { x: 168, y: 8, r: 8, sr: 3, z: 3, w: 212, h: 282 },
+  { x: 330, y: 50, r: 15, sr: 6, z: 1, w: 200, h: 262 },
 ];
 
 const LifeGallery = () => {
   return (
     <section className="life">
-      <div style={{ position: 'relative', maxWidth: 1000, margin: '0 auto' }}>
-        <Sparkle size={22} style={{ top: 10, left: '22%' }} />
-        <Sparkle size={16} style={{ top: 70, left: '18%' }} />
-        <Sparkle size={24} style={{ top: 6, right: '24%' }} />
-        <Sparkle size={16} style={{ top: 60, right: '18%' }} />
+      <div style={{ position: 'relative', maxWidth: 1100, margin: '0 auto' }}>
+        <Sparkle size={22} style={{ top: 22, left: '25%' }} />
+        <Sparkle size={13} style={{ top: 92, left: '20%' }} />
+        <Sparkle size={24} style={{ top: 30, right: '24%' }} />
+        <Sparkle size={15} style={{ top: 52, right: '17%' }} />
+        <Sparkle size={13} style={{ top: 140, right: '27%' }} />
         <h2>
           Somewhere between work<br />
           <span className="hl">and everything else</span>
