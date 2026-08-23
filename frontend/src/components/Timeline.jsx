@@ -61,9 +61,22 @@ const Timeline = () => {
         <div className="tl-sticky">
           <div className="tl-strip" style={{ transform: `translate3d(${tx}px,0,0)` }}>
             <svg className="tl-strip-svg" viewBox={`0 0 ${STRIP_W} ${STRIP_H}`} preserveAspectRatio="none">
-              <g transform={`translate(0, ${YOFF})`}>
-                <path className="tl-dash" d={PATH_D} />
-              </g>
+              <defs>
+                <mask id="tlDraw" maskUnits="userSpaceOnUse" x="0" y="0" width={STRIP_W} height={STRIP_H}>
+                  <path
+                    d={PATH_D}
+                    transform={`translate(0, ${YOFF})`}
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="30"
+                    strokeLinecap="round"
+                    pathLength="1"
+                    strokeDasharray={`${Math.max(progress, 0.0001)} 1`}
+                  />
+                </mask>
+              </defs>
+              <path className="tl-dash-bg" d={PATH_D} transform={`translate(0, ${YOFF})`} />
+              <path className="tl-dash" d={PATH_D} transform={`translate(0, ${YOFF})`} mask="url(#tlDraw)" />
             </svg>
 
             <div className="tl-strip-head">

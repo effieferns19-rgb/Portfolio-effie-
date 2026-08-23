@@ -101,6 +101,7 @@
 .timeline h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(32px, 4.4vw, 52px); margin: 0; white-space: nowrap; }
 .timeline .tl-desc { font-family: var(--sans); font-size: 15px; color: #4a453e; max-width: 330px; margin: 16px 0 0; line-height: 1.55; }
 .timeline .tl-desc b { font-weight: 700; }
+.tl-dash-bg { fill: none; stroke: #EADDC8; stroke-width: 2; stroke-dasharray: 3 9; stroke-linecap: round; }
 .tl-dash { fill: none; stroke: #C9B79A; stroke-width: 2; stroke-dasharray: 3 9; stroke-linecap: round; }
 .tl-node { position: absolute; opacity: 0.3; transition: opacity .6s ease; }
 .tl-node.focus { opacity: 1; }
