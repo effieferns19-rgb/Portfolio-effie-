@@ -71,7 +71,7 @@
 .about-inline { display: inline-block; width: 64px; height: 34px; border-radius: 999px; object-fit: cover; vertical-align: middle; margin: 0 6px; transform: translateY(-3px); box-shadow: 0 4px 10px rgba(31,29,29,0.15); }
 
 /* ===== Featured Work ===== */
-.work { position: relative; padding: 60px 0 120px; overflow: hidden; background-color: var(--cream); }
+.work { position: relative; padding: 60px 0 120px; overflow: clip; background-color: var(--cream); }
 .work-bg { position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; }
 .work-bg::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 240px; background: linear-gradient(180deg, #FCEEE4 0%, rgba(252,238,228,0) 100%); }
 .work-bg::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 240px; background: linear-gradient(0deg, var(--cream) 0%, rgba(255,250,241,0) 100%); }
