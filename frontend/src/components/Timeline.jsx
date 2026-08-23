@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { TIMELINE } from '../data/mock';
 
 const STRIP_W = 2500;
-const STRIP_H = 760;
-const YOFF = 48;
+const STRIP_H = 720;
+const YOFF = 10;
 
-// Layout of each milestone inside the 2400 x 720 strip
+// Layout of each milestone inside the 2500 x 720 strip
 const POS = [
   { dot: { x: 330, y: 300 }, node: { x: 352, y: 300, w: 230, align: 'left' }, anchor: 440,
     photos: [{ x: 150, y: 330, w: 150, h: 178, rot: -3 }] },
@@ -29,8 +29,10 @@ const PATH_D =
 
 const Timeline = () => {
   const scrollRef = useRef(null);
+  const pathRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1440);
+  const [fracs, setFracs] = useState(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -51,14 +53,45 @@ const Timeline = () => {
     };
   }, []);
 
+  // Measure where each dot sits along the path (as a fraction of total length)
+  useEffect(() => {
+    const path = pathRef.current;
+    if (!path || !path.getTotalLength) return;
+    const total = path.getTotalLength();
+    const samples = 900;
+    const res = POS.map((p) => {
+      let best = Infinity;
+      let bestLen = 0;
+      for (let s = 0; s <= samples; s++) {
+        const len = (s / samples) * total;
+        const pt = path.getPointAtLength(len);
+        const d = (pt.x - p.dot.x) ** 2 + (pt.y - p.dot.y) ** 2;
+        if (d < best) { best = d; bestLen = len; }
+      }
+      return bestLen / total;
+    });
+    setFracs(res);
+  }, []);
+
   const maxShift = Math.max(STRIP_W - vw, 0);
   const tx = -progress * maxShift;
-  const focusIndex = Math.min(Math.max(Math.round(progress * (POS.length - 1)), 0), POS.length - 1);
+  // A milestone is "reached" once the drawing line passes its dot; it then stays at full opacity.
+  const reached = (i) => {
+    const th = fracs ? fracs[i] - 0.01 : POS[i].anchor / STRIP_W;
+    return progress >= th;
+  };
 
   return (
     <section className="timeline" id="timeline">
       <div className="tl-scroll" ref={scrollRef}>
         <div className="tl-sticky">
+          <div className="tl-fixedhead">
+            <h2>Design journey so far</h2>
+            <p className="tl-desc">
+              From a <b>BFA to designing human-centred experiences —</b> here’s the path that shaped how I think, research, and design.
+            </p>
+          </div>
+
           <div className="tl-strip" style={{ transform: `translate3d(${tx}px,0,0)` }}>
             <svg className="tl-strip-svg" viewBox={`0 0 ${STRIP_W} ${STRIP_H}`} preserveAspectRatio="none">
               <defs>
@@ -76,26 +109,19 @@ const Timeline = () => {
                 </mask>
               </defs>
               <path className="tl-dash-bg" d={PATH_D} transform={`translate(0, ${YOFF})`} />
-              <path className="tl-dash" d={PATH_D} transform={`translate(0, ${YOFF})`} mask="url(#tlDraw)" />
+              <path ref={pathRef} className="tl-dash" d={PATH_D} transform={`translate(0, ${YOFF})`} mask="url(#tlDraw)" />
             </svg>
-
-            <div className="tl-strip-head">
-              <h2>Design journey so far</h2>
-              <p className="tl-desc">
-                From a <b>BFA to designing human-centred experiences —</b> here’s the path that shaped how I think, research, and design.
-              </p>
-            </div>
 
             {TIMELINE.map((t, i) => {
               const p = POS[i];
-              const foc = focusIndex === i ? 'focus' : '';
+              const on = reached(i) ? 'on' : '';
               return (
                 <React.Fragment key={i}>
-                  <span className="tl-dot" style={{ left: p.dot.x - 7, top: p.dot.y + YOFF - 7 }} />
+                  <span className={`tl-dot ${on}`} style={{ left: p.dot.x - 7, top: p.dot.y + YOFF - 7 }} />
                   {p.photos.map((ph, j) => (
                     <div
                       key={j}
-                      className={`tl-photo ${foc}`}
+                      className={`tl-photo ${on}`}
                       style={{ left: ph.x, top: ph.y + YOFF, width: ph.w, height: ph.h, transform: `rotate(${ph.rot}deg)`, zIndex: ph.peek ? 1 : 2 }}
                     >
                       <img src={t.photos[j]} alt="" />
@@ -103,7 +129,7 @@ const Timeline = () => {
                     </div>
                   ))}
                   <div
-                    className={`tl-node ${foc}`}
+                    className={`tl-node ${on}`}
                     style={{ left: p.node.x, top: p.node.y + YOFF, width: p.node.w, textAlign: p.node.align }}
                   >
                     <span className="tl-badge">{t.badge}</span>
