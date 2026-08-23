@@ -82,7 +82,7 @@
 .work-card .thumb img { width: 100%; display: block; }
 .work-tags { display: flex; gap: 10px; margin: 20px 6px 12px; }
 .tag { background: #F6D9D3; color: var(--terra); font-family: var(--sans); font-weight: 500; font-size: 13px; padding: 6px 14px; border-radius: 999px; }
-.work-card h3 { font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 2.3vw, 30px); margin: 6px 6px 12px; line-height: 1.18; }
+.work-card h3 { font-family: var(--serif); font-weight: 700; font-size: clamp(18px, 1.9vw, 24px); margin: 6px 6px 12px; line-height: 1.2; }
 
 /* ===== Timeline ===== */
 .timeline { position: relative; padding: 40px 0 120px; }
