@@ -3,11 +3,11 @@ import { LIFE_PHOTOS } from '../data/mock';
 
 // x/y/r = fanned (hover) target, sr = stacked default rotation
 const FAN = [
-  { x: -335, y: 24, r: -10, sr: -6, z: 1, w: 200, h: 262 },
-  { x: -170, y: 6, r: -5, sr: -3, z: 3, w: 212, h: 282 },
-  { x: 0, y: -8, r: 0, sr: 0, z: 6, w: 224, h: 300 },
-  { x: 170, y: 6, r: 5, sr: 3, z: 3, w: 212, h: 282 },
-  { x: 335, y: 24, r: 10, sr: 6, z: 1, w: 200, h: 262 },
+  { x: -338, y: 12, r: -7, sr: -5, z: 1, w: 200, h: 262 },
+  { x: -172, y: 3, r: -3.5, sr: -2.5, z: 3, w: 212, h: 282 },
+  { x: 0, y: -6, r: 0, sr: 0, z: 6, w: 224, h: 300 },
+  { x: 172, y: 3, r: 3.5, sr: 2.5, z: 3, w: 212, h: 282 },
+  { x: 338, y: 12, r: 7, sr: 5, z: 1, w: 200, h: 262 },
 ];
 
 const LifeGallery = () => {
