@@ -23,9 +23,15 @@ export const WORK = [
   },
   {
     id: 2,
-    img: '/images/proj_industrisalg2.jpg',
+    img: '/images/proj_industrisalg1.jpg',
     tags: ['Redesign', 'B2B'],
-    title: 'Redesigning Industrisalg’s B2B interface for seamless experience',
+    title: 'Redesigning Industrisalg AS for seamless B2B e-commerce experience.',
+  },
+  {
+    id: 3,
+    img: '/images/proj_industrisalg1.jpg',
+    tags: ['Redesign', 'B2B'],
+    title: 'Redesigning Industrisalg AS for seamless B2B e-commerce experience.',
   },
 ];
 
