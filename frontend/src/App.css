@@ -32,32 +32,30 @@
 
 /* ===== Hero ===== */
 .hero { position: relative; padding-top: 150px; text-align: center; }
+.hero-head { position: relative; max-width: 1200px; margin: 0 auto; }
 .hero .welcome { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 21px; color: var(--ink); }
 .hero h1 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(42px, 5.4vw, 82px); line-height: .98; margin: 4px 0 20px; color: var(--ink); }
 .hero .sub { font-family: var(--sans); font-size: 16px; color: #5f5a52; max-width: 440px; margin: 0 auto; line-height: 1.55; }
 
 /* Envelope */
-.env-wrap { position: relative; width: min(1000px, 92vw); margin: 46px auto 0; height: 430px; }
-.env-photos { position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%); width: 100%; height: 320px; }
-.polaroid { position: absolute; background: #fff; padding: 12px 12px 40px; border-radius: 6px; box-shadow: 0 18px 34px rgba(31,29,29,0.16); }
-.polaroid img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
-.polaroid .cap { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-size: 13px; color: #4a453e; font-family: var(--sans); }
-.polaroid .cap.script { font-family: var(--serif); font-style: italic; }
+.env-wrap { position: relative; width: min(1120px, 95vw); margin: 30px auto 0; height: 470px; }
+.env-back { position: absolute; left: 4%; right: 4%; top: 214px; bottom: 26px; background: #E6D4A4; border-radius: 16px; z-index: 1; }
 
-.env-p1 { width: 200px; height: 250px; left: 6%; bottom: 8px; transform: rotate(-7deg); z-index: 2; }
-.env-p2 { width: 240px; height: 290px; left: 24%; bottom: 34px; transform: rotate(-3deg); z-index: 3; }
-.env-p3 { width: 210px; height: 260px; left: 50%; bottom: 44px; transform: translateX(-50%) rotate(2deg); z-index: 5; }
-.env-p4 { width: 240px; height: 290px; right: 22%; bottom: 34px; transform: rotate(4deg); z-index: 3; }
-.env-p5 { width: 200px; height: 250px; right: 4%; bottom: 6px; transform: rotate(8deg); z-index: 2; }
+.hcard { position: absolute; transform: translate(-50%, 0) rotate(var(--rot, 0deg)); transform-origin: center bottom; transition: transform .45s cubic-bezier(0.2, 0.7, 0.2, 1); cursor: pointer; }
+.hcard img { width: 100%; display: block; user-select: none; -webkit-user-drag: none; }
+.hcard.c-a { z-index: 2; }
+.hcard.c-b { z-index: 3; }
+.hcard.c-pink { z-index: 6; }
+.hcard:hover { transform: translate(-50%, -46px) rotate(var(--rot, 0deg)); z-index: 30; }
 
-.pink-card { background: #F6D9D3; display:flex; align-items:center; justify-content:center; padding: 22px; }
-.pink-card span { font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1.15; color: var(--salmon); text-align: center; }
+.pink-poly { background: #F6D9D3; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 34px rgba(31,29,29,0.16); }
+.pink-text { font-family: var(--serif); font-weight: 700; color: #C56A57; font-size: 17px; line-height: 1.16; padding: 15px 15px 8px; }
+.pink-poly img { width: 100%; height: 116px; object-fit: cover; display: block; }
 
-.env-pocket { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 100%; height: 250px; z-index: 6; }
-.env-back { position: absolute; left: 3%; bottom: 40px; width: 94%; height: 190px; background: #E4D0A2; border-radius: 14px; z-index: 1; }
-.env-front { position: absolute; left: 0; bottom: 0; width: 100%; height: 220px; background: linear-gradient(180deg, #EBD8AC 0%, #E2CD9C 100%); border-radius: 18px 18px 20px 20px; box-shadow: 0 -6px 20px rgba(31,29,29,0.06); }
-.env-front::before { content: ""; position: absolute; left: 14px; right: 14px; top: 10px; height: 2px; border-top: 2px dashed rgba(148,120,60,0.4); }
-.env-btn { position: absolute; left: 50%; bottom: -22px; transform: translateX(-50%); z-index: 8; }
+.env-front { position: absolute; left: 1%; right: 1%; top: 200px; bottom: 0; width: 98%; height: auto; z-index: 5; filter: drop-shadow(0 14px 22px rgba(31,29,29,0.12)); }
+.env-front .env-pocket { fill: #F1E5C6; }
+.env-front .env-stitch { fill: none; stroke: #DAC68E; stroke-width: 2; stroke-dasharray: 6 7; }
+.env-btn { position: absolute; left: 50%; bottom: -20px; transform: translateX(-50%); z-index: 8; }
 
 /* ===== About ===== */
 .about { position: relative; padding: 120px 0 90px; background: linear-gradient(180deg, var(--cream) 0%, #FCEEE4 100%); }
