@@ -17,21 +17,21 @@ export const HERO_PHOTOS = [
 export const WORK = [
   {
     id: 1,
-    img: '/images/proj_industrisalg1.jpg',
-    tags: ['Redesign', 'B2B'],
+    img: '/images/proj_industrisalg.png',
+    figma: 'https://embed.figma.com/proto/ogvkLzjoZdThZE3VZ0PjkH/notion---resume?node-id=2614-5712&scaling=scale-down-width&content-scaling=fixed&page-id=2301%3A2&starting-point-node-id=2863%3A2027&embed-host=share',
     title: 'Redesigning Industrisalg AS for seamless B2B e-commerce experience.',
   },
   {
     id: 2,
-    img: '/images/proj_industrisalg1.jpg',
-    tags: ['Redesign', 'B2B'],
-    title: 'Redesigning Industrisalg AS for seamless B2B e-commerce experience.',
+    img: '/images/proj_norweh.png',
+    figma: 'https://embed.figma.com/proto/ogvkLzjoZdThZE3VZ0PjkH/notion---resume?node-id=2760-1125&scaling=scale-down-width&content-scaling=fixed&page-id=2301%3A2&starting-point-node-id=2863%3A2027&embed-host=share',
+    title: 'Transforming Norw’eh into an E-commerce Platform',
   },
   {
     id: 3,
-    img: '/images/proj_industrisalg1.jpg',
-    tags: ['Redesign', 'B2B'],
-    title: 'Redesigning Industrisalg AS for seamless B2B e-commerce experience.',
+    img: '/images/proj_hotel.png',
+    figma: 'https://embed.figma.com/proto/ogvkLzjoZdThZE3VZ0PjkH/notion---resume?node-id=2858-10070&scaling=scale-down-width&content-scaling=fixed&page-id=2301%3A2&starting-point-node-id=2863%3A2027&embed-host=share',
+    title: 'Redesigning Hotel Continental for a premium five-star, multi-venue hospitality experience.',
   },
 ];
 
