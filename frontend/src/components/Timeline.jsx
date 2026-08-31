@@ -1,28 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TIMELINE } from '../data/mock';
 
-const STRIP_W = 2200;
+const STRIP_W = 2800;
 const STRIP_H = 640;
 const YOFF = 0;
 
-// Layout of each milestone inside the 2200 x 640 strip
+// Layout of each milestone inside the 2800 x 640 strip
 const POS = [
-  { dot: { x: 250, y: 250 }, node: { x: 295, y: 285, w: 250, align: 'left' }, anchor: 250,
-    photos: [{ x: 95, y: 300, w: 150, h: 180, rot: -3 }] },
-  { dot: { x: 640, y: 205 }, node: { x: 515, y: 238, w: 250, align: 'center' }, anchor: 640,
+  { dot: { x: 300, y: 250 }, node: { x: 345, y: 285, w: 250, align: 'left' }, anchor: 300,
+    photos: [{ x: 145, y: 300, w: 150, h: 180, rot: -3 }] },
+  { dot: { x: 830, y: 205 }, node: { x: 705, y: 238, w: 250, align: 'center' }, anchor: 830,
     photos: [] },
-  { dot: { x: 1040, y: 232 }, node: { x: 1035, y: 268, w: 250, align: 'left' }, anchor: 1040,
-    photos: [{ x: 855, y: 280, w: 145, h: 172, rot: -3 }] },
-  { dot: { x: 1440, y: 220 }, node: { x: 1300, y: 255, w: 280, align: 'center' }, anchor: 1440,
+  { dot: { x: 1350, y: 232 }, node: { x: 1345, y: 268, w: 250, align: 'left' }, anchor: 1350,
+    photos: [{ x: 1165, y: 280, w: 145, h: 172, rot: -3 }] },
+  { dot: { x: 1870, y: 220 }, node: { x: 1730, y: 255, w: 280, align: 'center' }, anchor: 1870,
     photos: [] },
-  { dot: { x: 1900, y: 240 }, node: { x: 1900, y: 278, w: 210, align: 'left' }, anchor: 1900,
-    photos: [{ x: 1730, y: 290, w: 145, h: 172, rot: -3 }] },
+  { dot: { x: 2450, y: 240 }, node: { x: 2450, y: 278, w: 210, align: 'left' }, anchor: 2450,
+    photos: [{ x: 2280, y: 290, w: 145, h: 172, rot: -3 }] },
 ];
 
 const PATH_D =
-  'M -60 232 C 70 244 160 250 250 250 C 380 250 470 205 640 205 ' +
-  'C 820 205 890 232 1040 232 C 1200 232 1300 220 1440 220 ' +
-  'C 1620 220 1750 240 1900 240 C 2010 240 2090 246 2260 250';
+  'M -60 232 C 90 244 200 250 300 250 C 470 250 590 205 830 205 ' +
+  'C 1060 205 1150 232 1350 232 C 1560 232 1670 220 1870 220 ' +
+  'C 2100 220 2250 240 2450 240 C 2600 240 2720 246 2860 250';
 
 const Timeline = () => {
   const scrollRef = useRef(null);

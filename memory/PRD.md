@@ -21,7 +21,7 @@ Key files:
 ## Implemented (as of 2026-06)
 - Full pixel-faithful frontend of all sections.
 - Featured Work: removed extra card box-shadows; cropped ~330px transparent top padding from `proj_industrisalg.png`; tightened title→first-card gap (`.work-list` margin 24px).
-- Timeline redesigned to match latest "on scroll" reference: **5 milestones** (India HCI 2023 removed per user), gentle near-flat wavy dotted path, even spacing, single MDes photo (SMI Bengaluru), polaroids on BFA/MDes/UI/UX, grid background, cumulative scroll reveal. Strip = 2200×640; last node fully visible at end of scroll.
+- Timeline redesigned to match latest "on scroll" reference: **5 milestones** (India HCI 2023 removed per user), gentle near-flat wavy dotted path, wider spacing between cards, single MDes photo (SMI Bengaluru), polaroids on BFA/MDes/UI/UX, grid background, cumulative scroll reveal. Strip = 2800×640 (top offset `50% - 230px` for extra title→timeline gap); last node fully visible at end of scroll.
 
 ## Backlog / Roadmap
 - P1: "View Prototype" link inside Figma modal (open full prototype in new tab).
