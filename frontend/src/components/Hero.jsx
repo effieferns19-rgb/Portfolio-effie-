@@ -8,10 +8,10 @@ const scrollTo = (id) => {
 
 // left % (center of card), top offset (px), rotation, width, z-class
 const CARDS = [
-  { src: '/images/card_building.png', left: '23%', top: 58, rot: '-7deg', w: 196, z: 'c-a' },
-  { src: '/images/card_waffle.png', left: '37%', top: 24, rot: '-3deg', w: 205, z: 'c-b' },
-  { src: '/images/card_lake.png', left: '63%', top: 24, rot: '4deg', w: 205, z: 'c-b' },
-  { src: '/images/card_doorway.png', left: '77%', top: 58, rot: '8deg', w: 196, z: 'c-a' },
+  { src: '/images/card_building.png', left: '23%', top: 132, rot: '-7deg', w: 190, z: 'c-a' },
+  { src: '/images/card_waffle.png', left: '37%', top: 100, rot: '-3deg', w: 198, z: 'c-b' },
+  { src: '/images/card_lake.png', left: '63%', top: 100, rot: '4deg', w: 198, z: 'c-b' },
+  { src: '/images/card_doorway.png', left: '77%', top: 132, rot: '8deg', w: 190, z: 'c-a' },
 ];
 
 const Hero = () => {
@@ -30,7 +30,7 @@ const Hero = () => {
       </div>
 
       <div className="env-wrap">
-        <div className="env-back" />
+        <img className="env-layer env-back-img" src="/images/envelope.png" alt="" aria-hidden="true" />
 
         {CARDS.map((c, i) => (
           <div
@@ -42,25 +42,16 @@ const Hero = () => {
           </div>
         ))}
 
-        {/* Envelope front pocket */}
-        <svg className="env-front" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
-          <path
-            className="env-pocket"
-            d="M8 60 C 8 36 26 28 58 28 L 210 28 C 330 28 350 58 500 58 C 650 58 670 28 790 28 L 942 28 C 974 28 992 36 992 60 L 992 286 C 992 310 974 318 946 318 L 54 318 C 26 318 8 310 8 286 Z"
-          />
-          <path
-            className="env-stitch"
-            d="M24 64 C 24 46 38 40 58 40 L 212 40 C 332 40 352 70 500 70 C 648 70 668 40 788 40 L 942 40 C 962 40 976 46 976 64 L 976 284 C 976 300 964 306 946 306 L 54 306 C 36 306 24 300 24 284 Z"
-          />
-        </svg>
-
         {/* Pink center card (in front of the pocket) */}
-        <div className="hcard c-pink" style={{ left: '50%', top: 96, width: 194, '--rot': '1deg' }}>
+        <div className="hcard c-pink" style={{ left: '50%', top: 150, width: 190, '--rot': '1deg' }}>
           <div className="pink-poly">
             <div className="pink-text">Fuelled by curiosity, caffeine and whatever I cook.</div>
             <img src="/images/hero_pancake.jpg" alt="" draggable="false" />
           </div>
         </div>
+
+        {/* Envelope front pocket (clipped copy layered above card bottoms) */}
+        <img className="env-layer env-front-img" src="/images/envelope.png" alt="" aria-hidden="true" />
 
         <button className="btn-terra env-btn" onClick={() => scrollTo('contact')}>
           Get in touch

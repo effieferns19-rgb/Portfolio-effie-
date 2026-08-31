@@ -38,8 +38,10 @@
 .hero .sub { font-family: var(--sans); font-size: 16px; color: #5f5a52; max-width: 440px; margin: 0 auto; line-height: 1.55; }
 
 /* Envelope */
-.env-wrap { position: relative; width: min(1120px, 95vw); margin: 30px auto 0; height: 470px; }
-.env-back { position: absolute; left: 4%; right: 4%; top: 214px; bottom: 26px; background: #E6D4A4; border-radius: 16px; z-index: 1; }
+.env-wrap { position: relative; width: min(1120px, 95vw); aspect-ratio: 1098 / 592; margin: 8px auto 0; }
+.env-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.env-back-img { z-index: 1; }
+.env-front-img { z-index: 5; clip-path: polygon(0% 56%, 15% 55%, 40% 57%, 55% 56%, 72% 51%, 90% 47%, 100% 52%, 100% 100%, 0% 100%); }
 
 .hcard { position: absolute; transform: translate(-50%, 0) rotate(var(--rot, 0deg)); transform-origin: center bottom; transition: transform .45s cubic-bezier(0.2, 0.7, 0.2, 1); cursor: pointer; }
 .hcard img { width: 100%; display: block; user-select: none; -webkit-user-drag: none; }
@@ -52,10 +54,7 @@
 .pink-text { font-family: var(--serif); font-weight: 700; color: #C56A57; font-size: 17px; line-height: 1.16; padding: 15px 15px 8px; }
 .pink-poly img { width: 100%; height: 116px; object-fit: cover; display: block; }
 
-.env-front { position: absolute; left: 1%; right: 1%; top: 200px; bottom: 0; width: 98%; height: auto; z-index: 5; filter: drop-shadow(0 14px 22px rgba(31,29,29,0.12)); }
-.env-front .env-pocket { fill: #F1E5C6; }
-.env-front .env-stitch { fill: none; stroke: #DAC68E; stroke-width: 2; stroke-dasharray: 6 7; }
-.env-btn { position: absolute; left: 50%; bottom: -20px; transform: translateX(-50%); z-index: 8; }
+.env-btn { position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); z-index: 8; }
 
 /* ===== About ===== */
 .about { position: relative; padding: 120px 0 90px; background: linear-gradient(180deg, var(--cream) 0%, #FCEEE4 100%); }
