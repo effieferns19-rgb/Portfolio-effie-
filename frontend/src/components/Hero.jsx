@@ -8,10 +8,10 @@ const scrollTo = (id) => {
 
 // left % (center of card), top offset (px), rotation, width, z-class
 const CARDS = [
-  { src: '/images/card_building.png', left: '23%', top: 132, rot: '-7deg', w: 190, z: 'c-a' },
-  { src: '/images/card_waffle.png', left: '37%', top: 100, rot: '-3deg', w: 198, z: 'c-b' },
-  { src: '/images/card_lake.png', left: '63%', top: 100, rot: '4deg', w: 198, z: 'c-b' },
-  { src: '/images/card_doorway.png', left: '77%', top: 132, rot: '8deg', w: 190, z: 'c-a' },
+  { src: '/images/card_building.png', left: '15%', top: 116, rot: '-5deg', w: 208, z: 'c-a' },
+  { src: '/images/card_waffle.png', left: '30%', top: 32, rot: '-1deg', w: 230, z: 'c-b' },
+  { src: '/images/card_lake.png', left: '66%', top: 32, rot: '1deg', w: 230, z: 'c-b' },
+  { src: '/images/card_doorway.png', left: '86%', top: 96, rot: '4deg', w: 208, z: 'c-a' },
 ];
 
 const Hero = () => {
@@ -43,7 +43,7 @@ const Hero = () => {
         ))}
 
         {/* Pink center card (in front of the pocket) */}
-        <div className="hcard c-pink" style={{ left: '50%', top: 150, width: 190, '--rot': '1deg' }}>
+        <div className="hcard c-pink" style={{ left: '48%', top: 135, width: 214, '--rot': '3deg' }}>
           <div className="pink-poly">
             <div className="pink-text">Fuelled by curiosity, caffeine and whatever I cook.</div>
             <img src="/images/hero_pancake.jpg" alt="" draggable="false" />
