@@ -20,7 +20,12 @@ const Navbar = () => {
         <button className="nav-logo" onClick={() => scrollTo('top')} aria-label="Home">EF</button>
         <div className="nav-links">
           {NAV.map((n) => (
-            <button key={n.label} className="nav-link" onClick={() => scrollTo(n.target)}>
+            <button
+              key={n.label}
+              className="nav-link"
+              data-testid={`nav-${n.label.toLowerCase().replace(/\s+/g, '-')}-link`}
+              onClick={() => (n.label === 'Resume' ? window.open('/resume.pdf', '_blank', 'noopener') : scrollTo(n.target))}
+            >
               {n.label}
             </button>
           ))}

@@ -67,7 +67,11 @@ const Hero = () => {
         })}
       </div>
 
-      <button className="btn-terra hero-btn" onClick={() => scrollTo('contact')}>
+      <button
+        className="btn-terra hero-btn"
+        data-testid="hero-get-in-touch-btn"
+        onClick={() => window.open('/resume.pdf', '_blank', 'noopener')}
+      >
         Get in touch
       </button>
     </section>

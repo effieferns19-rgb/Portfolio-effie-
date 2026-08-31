@@ -22,8 +22,8 @@ const Contact = () => {
         <p className="c-lead">
           If you’re looking for a designer who’s curious, thoughtful, and always up for a challenge — let’s talk.
         </p>
-        <a href="mailto:effie@example.com">
-          <button className="btn-terra">Hire me!</button>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <button className="btn-terra" data-testid="contact-hire-me-btn">Hire me!</button>
         </a>
         <h2>Let’s build together?</h2>
         <div className="socials">
