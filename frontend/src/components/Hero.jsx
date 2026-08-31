@@ -43,11 +43,8 @@ const Hero = () => {
         ))}
 
         {/* Pink center card (in front of the pocket) */}
-        <div className="hcard c-pink" style={{ left: '48%', top: 135, width: 214, '--rot': '3deg' }}>
-          <div className="pink-poly">
-            <div className="pink-text">Fuelled by curiosity, caffeine and whatever I cook.</div>
-            <img src="/images/hero_pancake.jpg" alt="" draggable="false" />
-          </div>
+        <div className="hcard c-pink" style={{ left: '48%', top: 128, width: 200, '--rot': '3deg' }}>
+          <img src="/images/card_pink.png" alt="" draggable="false" />
         </div>
 
         {/* Envelope front pocket (clipped copy layered above card bottoms) */}
