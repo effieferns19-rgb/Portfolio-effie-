@@ -8,10 +8,11 @@ const scrollTo = (id) => {
 
 // left % (center of card), top offset (px), rotation, width, z-class
 const CARDS = [
-  { src: '/images/card_building.png', left: '13%', top: 142, rot: '-5deg', w: 212, z: 'c-a' },
-  { src: '/images/card_waffle.png', left: '30%', top: 54, rot: '-2deg', w: 236, z: 'c-b' },
-  { src: '/images/card_lake.png', left: '66%', top: 54, rot: '1deg', w: 236, z: 'c-b' },
-  { src: '/images/card_doorway.png', left: '87%', top: 120, rot: '4deg', w: 212, z: 'c-a' },
+  { src: '/images/card_building.png', left: '20%', top: 24, rot: '-8deg', w: 250, z: 'c1' },
+  { src: '/images/card_waffle.png', left: '35%', top: 10, rot: '-3deg', w: 252, z: 'c2' },
+  { src: '/images/card_pink.png', left: '50%', top: 0, rot: '0deg', w: 256, z: 'c5' },
+  { src: '/images/card_lake.png', left: '65%', top: 10, rot: '3deg', w: 252, z: 'c3' },
+  { src: '/images/card_doorway.png', left: '80%', top: 24, rot: '8deg', w: 250, z: 'c4' },
 ];
 
 const Hero = () => {
@@ -29,9 +30,7 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="env-wrap">
-        <img className="env-layer env-back-img" src="/images/envelope.png" alt="" aria-hidden="true" />
-
+      <div className="cards-row">
         {CARDS.map((c, i) => (
           <div
             key={i}
@@ -41,19 +40,11 @@ const Hero = () => {
             <img src={c.src} alt="" draggable="false" />
           </div>
         ))}
-
-        {/* Pink center card (in front of the pocket) */}
-        <div className="hcard c-pink" style={{ left: '48%', top: 156, width: 206, '--rot': '3deg' }}>
-          <img src="/images/card_pink.png" alt="" draggable="false" />
-        </div>
-
-        {/* Envelope front pocket (clipped copy layered above card bottoms) */}
-        <img className="env-layer env-front-img" src="/images/envelope.png" alt="" aria-hidden="true" />
-
-        <button className="btn-terra env-btn" onClick={() => scrollTo('contact')}>
-          Get in touch
-        </button>
       </div>
+
+      <button className="btn-terra hero-btn" onClick={() => scrollTo('contact')}>
+        Get in touch
+      </button>
     </section>
   );
 };
