@@ -72,7 +72,7 @@
 .work-list .work-card:nth-child(2) { top: 134px; }
 .work-list .work-card:nth-child(3) { top: 158px; }
 .work-card:hover { transform: translateY(-4px); }
-.work-card img { width: 100%; display: block; border-radius: 22px; box-shadow: 0 30px 60px rgba(31,29,29,0.12); }
+.work-card img { width: 100%; display: block; border-radius: 22px; }
 
 /* Case-study modal */
 .cs-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(31,27,24,0.55); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 24px; }
