@@ -117,7 +117,7 @@
 .tl-mobile { display: none; }
 
 /* ===== Life gallery ===== */
-.life { position: relative; padding: 90px 0 20px; text-align: center; background: var(--cream); }
+.life { position: relative; z-index: 5; margin-top: -130px; padding: 40px 0 20px; text-align: center; background: var(--cream); }
 .life h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(30px, 4vw, 52px); margin: 0 auto; line-height: 1.14; max-width: 760px; }
 .life h2 .hl { background: var(--pink); padding: 2px 14px; }
 .life-fan { position: relative; width: min(1000px, 96vw); height: 380px; margin: 12px auto 0; }
