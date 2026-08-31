@@ -54,15 +54,8 @@ export const TIMELINE = [
     badge: '2022 – 2024',
     title: 'MDes, Human-Centred Design, SMI Bangalore',
     desc: 'Specialised in designing with people, grounded in research',
-    photos: ['/images/tl_research.jpg', '/images/tl_smi.jpg'],
+    photos: ['/images/tl_smi.jpg'],
     caption: 'SMI Bengaluru',
-  },
-  {
-    badge: 'Nov 2023',
-    title: 'Showcased two projects at India HCI 2023',
-    desc: 'Gained insights from keynote speakers and industry tracks hosted by UPES Dehradun',
-    photos: ['/images/hci_poster.jpg'],
-    caption: 'India HCI 2023',
   },
   {
     badge: 'Jul – Nov 2024',

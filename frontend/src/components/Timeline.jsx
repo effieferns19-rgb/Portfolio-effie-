@@ -1,31 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TIMELINE } from '../data/mock';
 
-const STRIP_W = 2500;
-const STRIP_H = 720;
-const YOFF = 10;
+const STRIP_W = 2200;
+const STRIP_H = 640;
+const YOFF = 0;
 
-// Layout of each milestone inside the 2500 x 720 strip
+// Layout of each milestone inside the 2200 x 640 strip
 const POS = [
-  { dot: { x: 330, y: 300 }, node: { x: 352, y: 300, w: 230, align: 'left' }, anchor: 440,
-    photos: [{ x: 150, y: 330, w: 150, h: 178, rot: -3 }] },
-  { dot: { x: 780, y: 520 }, node: { x: 660, y: 545, w: 250, align: 'center' }, anchor: 795,
+  { dot: { x: 250, y: 250 }, node: { x: 295, y: 285, w: 250, align: 'left' }, anchor: 250,
+    photos: [{ x: 95, y: 300, w: 150, h: 180, rot: -3 }] },
+  { dot: { x: 640, y: 205 }, node: { x: 515, y: 238, w: 250, align: 'center' }, anchor: 640,
     photos: [] },
-  { dot: { x: 1180, y: 330 }, node: { x: 1205, y: 232, w: 220, align: 'left' }, anchor: 1300,
-    photos: [{ x: 995, y: 300, w: 178, h: 128, rot: 4, peek: true }, { x: 985, y: 178, w: 170, h: 210, rot: -3 }] },
-  { dot: { x: 1440, y: 270 }, node: { x: 1360, y: 430, w: 240, align: 'center' }, anchor: 1480,
-    photos: [{ x: 1360, y: 150, w: 150, h: 200, rot: 3 }] },
-  { dot: { x: 1760, y: 630 }, node: { x: 1720, y: 330, w: 250, align: 'center' }, anchor: 1855,
+  { dot: { x: 1040, y: 232 }, node: { x: 1035, y: 268, w: 250, align: 'left' }, anchor: 1040,
+    photos: [{ x: 855, y: 280, w: 145, h: 172, rot: -3 }] },
+  { dot: { x: 1440, y: 220 }, node: { x: 1300, y: 255, w: 280, align: 'center' }, anchor: 1440,
     photos: [] },
-  { dot: { x: 2130, y: 300 }, node: { x: 2200, y: 160, w: 210, align: 'left' }, anchor: 2300,
-    photos: [{ x: 1990, y: 130, w: 158, h: 190, rot: -2 }] },
+  { dot: { x: 1900, y: 240 }, node: { x: 1900, y: 278, w: 210, align: 'left' }, anchor: 1900,
+    photos: [{ x: 1730, y: 290, w: 145, h: 172, rot: -3 }] },
 ];
 
 const PATH_D =
-  'M -60 250 C 120 250 210 300 330 300 C 470 300 560 150 480 150 C 370 150 400 560 780 520 ' +
-  'C 1060 490 980 330 1180 330 C 1320 330 1370 160 1440 270 C 1520 430 1760 250 1650 560 ' +
-  'C 1600 690 1830 690 1760 630 C 1980 560 2000 300 2130 300 C 2290 300 2380 500 2310 570 ' +
-  'C 2250 630 2500 560 2560 380';
+  'M -60 232 C 70 244 160 250 250 250 C 380 250 470 205 640 205 ' +
+  'C 820 205 890 232 1040 232 C 1200 232 1300 220 1440 220 ' +
+  'C 1620 220 1750 240 1900 240 C 2010 240 2090 246 2260 250';
 
 const Timeline = () => {
   const scrollRef = useRef(null);
