@@ -41,7 +41,10 @@
 .cards-row { position: relative; width: min(1120px, 96vw); height: 360px; margin: 26px auto 0; }
 .hero-btn { display: block; margin: 40px auto 0; }
 
-.hcard { position: absolute; transform-origin: center bottom; transition: transform .4s cubic-bezier(0.2, 0.7, 0.2, 1); cursor: pointer; }
+.hcard { position: absolute; transform-origin: center bottom; transition: transform .4s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; animation: cardEnter .75s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+@keyframes cardEnter {
+  from { opacity: 0; transform: translate(calc(-50% + var(--enter-x, 0px)), 34px) scale(0.84) rotate(0deg); }
+}
 .hcard img { width: 100%; display: block; user-select: none; -webkit-user-drag: none; }
 
 /* ===== About ===== */

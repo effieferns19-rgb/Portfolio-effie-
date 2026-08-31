@@ -50,7 +50,16 @@ const Hero = () => {
               className="hcard"
               onMouseEnter={() => setHover(i)}
               onMouseLeave={() => setHover(null)}
-              style={{ left: `${c.left}%`, top: c.top, width: c.w, transform, zIndex: hover === i ? 40 : c.z }}
+              style={{
+                left: `${c.left}%`,
+                top: c.top,
+                width: c.w,
+                transform,
+                zIndex: hover === i ? 40 : c.z,
+                animationDelay: `${Math.abs(i - 2) * 90}ms`,
+                '--enter-x': `${(2 - i) * 46}px`,
+                '--rot': `${c.rot}deg`,
+              }}
             >
               <img src={c.src} alt="" draggable="false" />
             </div>
