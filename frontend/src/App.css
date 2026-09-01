@@ -38,7 +38,7 @@
 @keyframes twinkle { 0%,100% { opacity:.35; transform: scale(.85);} 50% { opacity:1; transform: scale(1.1);} }
 
 /* ===== Hero ===== */
-.hero { position: relative; padding-top: 150px; text-align: center; }
+.hero { position: relative; padding-top: 172px; text-align: center; }
 .hero-head { position: relative; max-width: 1200px; margin: 0 auto; }
 .hero .welcome { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 21px; color: var(--ink); }
 .hero h1 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(42px, 5.4vw, 82px); line-height: .98; margin: 4px 0 20px; color: var(--ink); }
@@ -46,7 +46,7 @@
 
 /* Fanned polaroid row */
 .cards-row { position: relative; width: min(1120px, 96vw); height: 360px; margin: 26px auto 0; }
-.hero-btn { display: block; margin: 40px auto 0; }
+.hero-btn { display: block; margin: 18px auto 0; }
 
 .hcard { position: absolute; transform-origin: center bottom; transition: transform .4s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; animation: cardEnter .75s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
 @keyframes cardEnter {
@@ -188,11 +188,11 @@
   .nav-link { padding: 9px 11px; font-size: 14px; }
 
   /* Hero — swipe deck */
-  .hero { padding-top: 110px; }
+  .hero { padding-top: 128px; }
   .hero .welcome { font-size: 18px; }
   .hero .sub { font-size: 15px; max-width: 100%; padding: 0 26px; }
   .hero-deck { margin-top: 30px; }
-  .hero-btn { margin-top: 22px; }
+  .hero-btn { margin-top: 10px; }
 
   /* About */
   .about { padding: 60px 0 52px; background-size: 100% 150px; }
@@ -215,7 +215,7 @@
   .tl-mobile { gap: 0; padding: 8px 26px 0; align-items: stretch; }
   .tl-mobile .tl-head { margin-bottom: 34px; text-align: left; }
   .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.12; }
-  .tlm-item { display: block; position: relative; padding: 0 0 28px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
+  .tlm-item { display: block; position: relative; padding: 0 0 36px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
   .tlm-item:last-child { border-left-color: transparent; padding-bottom: 4px; }
   .tlm-item::before { content: ''; position: absolute; left: -8px; top: 3px; width: 13px; height: 13px; border-radius: 999px; background: var(--terra); box-shadow: 0 0 0 4px var(--cream); }
   .tlm-photo { display: none !important; }
