@@ -10,24 +10,36 @@ Language: English.
 - Preview backend URL: `frontend/.env` → REACT_APP_BACKEND_URL.
 
 Key files:
-- `src/components/Hero.jsx` — overlapping fanned polaroids, hover spread.
+- `src/components/Hero.jsx` — overlapping fanned polaroids (desktop), hover spread; "Get in touch" opens resume.
+- `src/components/About.jsx` — "Hello! I'm Effie" scroll word-reveal paragraph (inline images removed).
 - `src/components/FeaturedWork.jsx` — sticky-stacking case cards + Figma modal.
-- `src/components/Timeline.jsx` — horizontal pinned scroll timeline, cumulative reveal, draw-in dotted SVG path.
+- `src/components/Timeline.jsx` — horizontal pinned scroll timeline (desktop) + stacked mobile list (`tl-mobile`).
 - `src/components/LifeGallery.jsx` — stack-to-fan gallery.
-- `src/components/Contact.jsx` — footer w/ blended sky bg.
-- `src/App.css` — all animations, sticky, scroll transitions.
-- `src/data/mock.js` — TIMELINE, WORK (Figma embeds), HERO_PHOTOS, LIFE_PHOTOS.
+- `src/components/Navbar.jsx` — pill nav; "Resume" opens resume.pdf.
+- `src/components/Contact.jsx` — footer w/ blended sky bg; "Hire me!" opens resume.pdf.
+- `src/App.css` — all animations, sticky, scroll transitions, page grid background, responsive media queries.
+- `src/data/mock.js` — TIMELINE (5 milestones), WORK (Figma embeds), NAV, LIFE_PHOTOS.
+- `public/resume.pdf` — served at `/resume.pdf`.
 
-## Implemented (as of 2026-06)
-- Full pixel-faithful frontend of all sections.
-- Featured Work: removed extra card box-shadows; cropped ~330px transparent top padding from `proj_industrisalg.png`; tightened title→first-card gap (`.work-list` margin 24px).
-- Timeline redesigned to match latest "on scroll" reference: **5 milestones** (India HCI 2023 removed per user), gentle near-flat wavy dotted path, wider spacing between cards, single MDes photo (SMI Bengaluru), polaroids on BFA/MDes/UI/UX, grid background, cumulative scroll reveal. Strip = 2800×640 (top offset `50% - 230px` for extra title→timeline gap); last node fully visible at end of scroll.
+## Implemented (as of 2026-06 / Sep session)
+- Full pixel-faithful desktop frontend of all sections.
+- Featured Work: removed extra card box-shadows; cropped transparent top padding from `proj_industrisalg.png`; tightened title→first-card gap.
+- Timeline redesigned to match latest "on scroll" reference: 5 milestones (India HCI 2023 removed), gentle wavy dotted path, wider card spacing, single MDes photo, grid background, cumulative reveal. Strip 2800×640.
+- Continuous light grid background across all non-sky sections; fades into peach before the two sky sections (Featured Work + footer).
+- Reduced timeline→"Somewhere between…" gap (life section `margin-top`/padding tuned).
+- Resume PDF wired to: Resume nav link, hero "Get in touch", footer "Hire me!" (open in new tab). data-testids: `nav-resume-link`, `hero-get-in-touch-btn`, `contact-hire-me-btn`.
+- Removed inline images between text in the About ("Hello! I'm Effie") section (desktop + mobile).
+- Mobile layout (`@media max-width:768px`, desktop untouched): hero polaroids → vertical stacked cards; About tighter spacing; Featured Work non-sticky stacked cards; Timeline uses stacked mobile list (desktop title hidden ≤860px); Life gallery → 2-col card grid; footer heights adjusted.
+- Deployment readiness health check: PASS.
 
 ## Backlog / Roadmap
-- P1: "View Prototype" link inside Figma modal (open full prototype in new tab).
-- P1: Contact form backend so "Get in touch"/"Hire me!" sends real enquiry emails (needs email integration e.g. Resend/SendGrid).
-- P1: Wire "Resume" nav link to download PDF resume.
+- P1: "View full prototype" link inside each Figma modal (open in new tab).
+- P1: Real contact/email option (Hire me! + Get in touch currently open resume; no live email form). Needs email integration (e.g. Resend/SendGrid) if wanted.
+- P2: Resume download icon next to nav link.
+- P2: Timeline "you are here" progress marker along the path.
 
 ## Notes / Gotchas
-- Do NOT apply `overflow: hidden` to `.App`/section wrappers — breaks sticky scroll in FeaturedWork & Timeline. Use `overflow: clip` if clipping needed.
+- Do NOT apply `overflow: hidden` to `.App`/section wrappers — breaks sticky scroll in FeaturedWork & Timeline. Use `overflow: clip`.
 - Timeline reveal is driven by vertical scroll `progress` mapped to path length fraction, independent of horizontal `tx`.
+- All mobile changes are scoped to media queries (`≤768px`, and nav/timeline switch `≤860px`) to keep desktop unchanged.
+- Screenshot tool: set viewport AFTER `page.goto` for mobile widths to take effect.

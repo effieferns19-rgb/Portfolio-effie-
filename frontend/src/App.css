@@ -159,6 +159,7 @@
   .tl-scroll { height: auto; }
   .tl-sticky { position: static; height: auto; display: block; padding: 60px 0; background-image: none; }
   .tl-strip { display: none; }
+  .tl-fixedhead { display: none; }
   .tl-mobile { display: flex; flex-direction: column; gap: 36px; padding: 10px 24px 0; }
   .tl-mobile .tl-head { margin-bottom: 6px; }
   .tlm-item { display: flex; gap: 18px; align-items: flex-start; }
@@ -166,4 +167,59 @@
   .tlm-photo img { width: 100%; border-radius: 4px; box-shadow: 0 14px 26px rgba(31,29,29,0.16); }
   .tlm-nophoto { display: none; }
   .life-fan { height: 300px; }
+}
+
+/* ===== Mobile (phones) ===== */
+@media (max-width: 768px) {
+  .nav-wrap { top: 14px; }
+  .nav-logo { width: 44px; height: 44px; font-size: 16px; margin-right: 4px; }
+  .nav-link { padding: 9px 11px; font-size: 14px; }
+
+  /* Hero — simple stacked cards */
+  .hero { padding-top: 110px; }
+  .hero .welcome { font-size: 18px; }
+  .hero .sub { font-size: 15px; max-width: 100%; padding: 0 26px; }
+  .cards-row { height: auto; display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; margin: 26px auto 0; padding: 0 24px; }
+  .hcard { position: relative !important; left: auto !important; top: auto !important; width: min(278px, 86%) !important; transform: none !important; animation: none !important; z-index: auto !important; }
+  .hcard img { border-radius: 10px; }
+  .hero-btn { margin-top: 30px; }
+
+  /* About */
+  .about { padding: 60px 0 52px; background-size: 100% 150px; }
+  .about-role-wrap { padding: 0 20px; }
+  .about .role { margin-top: 14px; }
+  .about-para { margin-top: 28px; padding: 0 26px; font-size: 19px; line-height: 1.55; }
+
+  /* Featured Work — cards stack, no sticky */
+  .work { padding: 36px 0 64px; }
+  .section-head p { font-size: 15px; padding: 0 26px; }
+  .work-list { gap: 26px; padding: 0 20px; margin-top: 26px; }
+  .work-card,
+  .work-list .work-card:nth-child(2),
+  .work-list .work-card:nth-child(3) { position: relative !important; top: auto !important; }
+  .work-card:hover { transform: none; }
+  .work-card img { border-radius: 16px; }
+
+  /* Timeline mobile spacing */
+  .tl-sticky { padding: 48px 0 16px; }
+  .tl-mobile { gap: 30px; padding: 4px 22px 0; }
+  .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.1; }
+  .tlm-item { gap: 16px; }
+  .tlm-photo { flex: 0 0 104px; }
+
+  /* Life gallery — simple 2-col card grid */
+  .life { margin-top: 0; padding: 36px 0 28px; }
+  .life h2 { font-size: 30px; padding: 0 24px; line-height: 1.16; }
+  .life-fan { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; padding: 8px 22px 0; margin-top: 22px; }
+  .fan-card { position: relative !important; left: auto !important; bottom: auto !important; width: 100% !important; height: auto !important; aspect-ratio: 3 / 4; transform: rotate(0deg) !important; box-shadow: 0 12px 26px rgba(31,29,29,0.16); }
+  .life-fan:hover .fan-card { transform: rotate(0deg) !important; }
+  .fan-card img { height: 100%; }
+
+  /* Contact / footer */
+  .pre-contact { padding: 22px 22px 84px; }
+  .pre-contact p { font-size: 15px; }
+  .contact { aspect-ratio: auto; min-height: 540px; padding: 0 22px; }
+  .contact .c-lead { margin: 26% auto 22px; font-size: 15px; }
+  .contact h2 { font-size: clamp(40px, 12vw, 62px); }
+  .socials { gap: 22px; margin-top: 22px; }
 }

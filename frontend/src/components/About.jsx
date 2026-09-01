@@ -4,14 +4,14 @@ import React, { useEffect, useRef, useState } from 'react';
 const TOKENS = [
   { t: 'A' }, { t: 'designer' }, { t: 'inspired' }, { t: 'by' }, { t: 'stories,' },
   { t: 'places,' }, { t: 'and' }, { t: 'people.' }, { t: 'Whether' }, { t: "I'm" },
-  { t: 'exploring' }, { t: 'caf\u00e9s' }, { img: '/images/about_cafe.jpg' },
+  { t: 'exploring' }, { t: 'caf\u00e9s' },
   { t: 'traveling' }, { t: 'or' }, { t: 'learning' }, { t: 'a' }, { t: 'new' }, { t: 'hobby,' },
   { t: "I'm" }, { t: 'always' }, { t: 'collecting' }, { t: 'ideas.' },
-  { t: 'That' }, { t: 'CURIOSITY', cap: true }, { t: 'drives' }, { img: '/images/life_kayak.jpg' },
+  { t: 'That' }, { t: 'CURIOSITY', cap: true }, { t: 'drives' },
   { t: 'everything' }, { t: 'I' }, { t: 'create.' },
   { t: 'I' }, { t: 'love' }, { t: 'designing' }, { t: 'thoughtful,' }, { t: 'engaging' },
   { t: 'concepts' }, { t: 'because' }, { t: 'I' }, { t: 'BELIEVE', cap: true },
-  { img: '/images/craft_bakes.jpg' }, { t: 'STORYTELLING', cap: true },
+  { t: 'STORYTELLING', cap: true },
   { t: 'is' }, { t: 'the' }, { t: 'secret' }, { t: 'ingredient' }, { t: 'to' }, { t: 'a' }, { t: 'great' }, { t: 'design!' },
 ];
 
