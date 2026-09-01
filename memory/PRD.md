@@ -29,7 +29,9 @@ Key files:
 - Reduced timeline→"Somewhere between…" gap (life section `margin-top`/padding tuned).
 - Resume PDF wired to: Resume nav link, hero "Get in touch", footer "Hire me!" (open in new tab). data-testids: `nav-resume-link`, `hero-get-in-touch-btn`, `contact-hire-me-btn`.
 - Removed inline images between text in the About ("Hello! I'm Effie") section (desktop + mobile).
-- Mobile layout (`@media max-width:768px`, desktop untouched): hero polaroids → vertical stacked cards; About tighter spacing; Featured Work non-sticky stacked cards; Timeline uses stacked mobile list (desktop title hidden ≤860px); Life gallery → 2-col card grid; footer heights adjusted.
+- Mobile layout (`@media max-width:768px`, desktop untouched): Hero + Life gallery use swipeable stacked card decks (`SwipeDeck.jsx` + `useIsMobile.js` hook, rendered only on mobile); Featured Work non-sticky stacked cards; footer heights adjusted.
+- Timeline order REVERSED (Kilowott first → BFA last) on desktop & mobile via `TIMELINE` data reorder (photos land on Kilowott/MDes/BFA, matching reference).
+- Mobile timeline: images hidden; clean left-aligned vertical timeline (dotted left rail + terra dots) with badge/title/desc stacked.
 - Deployment readiness health check: PASS.
 
 ## Backlog / Roadmap

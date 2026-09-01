@@ -150,6 +150,16 @@
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.show { opacity: 1; transform: none; }
 
+/* ===== Swipe deck (mobile stacked cards) ===== */
+.swipe-deck { position: relative; width: 100%; margin: 26px auto 0; touch-action: pan-y; }
+.swipe-card { position: absolute; left: 50%; top: 0; will-change: transform; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
+.swipe-card.is-top { cursor: grab; }
+.swipe-card.is-top:active { cursor: grabbing; }
+.swipe-card img { width: 100%; display: block; -webkit-user-drag: none; }
+.deck-polaroid { background: #fff; padding: 12px 12px 42px; border-radius: 4px; box-shadow: 0 22px 44px rgba(31,29,29,0.20); }
+.deck-polaroid img { aspect-ratio: 3 / 4; object-fit: cover; border-radius: 2px; }
+.swipe-hint { text-align: center; font-family: var(--sans); font-size: 13px; color: #9a9086; margin-top: 14px; }
+
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
   .cards-row { height: 300px; }
@@ -175,14 +185,12 @@
   .nav-logo { width: 44px; height: 44px; font-size: 16px; margin-right: 4px; }
   .nav-link { padding: 9px 11px; font-size: 14px; }
 
-  /* Hero — simple stacked cards */
+  /* Hero — swipe deck */
   .hero { padding-top: 110px; }
   .hero .welcome { font-size: 18px; }
   .hero .sub { font-size: 15px; max-width: 100%; padding: 0 26px; }
-  .cards-row { height: auto; display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; margin: 26px auto 0; padding: 0 24px; }
-  .hcard { position: relative !important; left: auto !important; top: auto !important; width: min(278px, 86%) !important; transform: none !important; animation: none !important; z-index: auto !important; }
-  .hcard img { border-radius: 10px; }
-  .hero-btn { margin-top: 30px; }
+  .hero-deck { margin-top: 30px; }
+  .hero-btn { margin-top: 22px; }
 
   /* About */
   .about { padding: 60px 0 52px; background-size: 100% 150px; }
@@ -200,20 +208,20 @@
   .work-card:hover { transform: none; }
   .work-card img { border-radius: 16px; }
 
-  /* Timeline mobile spacing */
-  .tl-sticky { padding: 48px 0 16px; }
-  .tl-mobile { gap: 30px; padding: 4px 22px 0; }
-  .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.1; }
-  .tlm-item { gap: 16px; }
-  .tlm-photo { flex: 0 0 104px; }
+  /* Timeline — left-aligned vertical list, no images */
+  .tl-sticky { padding: 48px 0 24px; }
+  .tl-mobile { gap: 0; padding: 8px 26px 0; align-items: stretch; }
+  .tl-mobile .tl-head { margin-bottom: 24px; text-align: left; }
+  .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.12; }
+  .tlm-item { display: block; position: relative; padding: 0 0 30px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
+  .tlm-item:last-child { border-left-color: transparent; padding-bottom: 4px; }
+  .tlm-item::before { content: ''; position: absolute; left: -8px; top: 3px; width: 13px; height: 13px; border-radius: 999px; background: var(--terra); box-shadow: 0 0 0 4px var(--cream); }
+  .tlm-photo { display: none !important; }
 
-  /* Life gallery — simple 2-col card grid */
-  .life { margin-top: 0; padding: 36px 0 28px; }
+  /* Life gallery — swipe deck */
+  .life { margin-top: 0; padding: 36px 0 34px; }
   .life h2 { font-size: 30px; padding: 0 24px; line-height: 1.16; }
-  .life-fan { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; padding: 8px 22px 0; margin-top: 22px; }
-  .fan-card { position: relative !important; left: auto !important; bottom: auto !important; width: 100% !important; height: auto !important; aspect-ratio: 3 / 4; transform: rotate(0deg) !important; box-shadow: 0 12px 26px rgba(31,29,29,0.16); }
-  .life-fan:hover .fan-card { transform: rotate(0deg) !important; }
-  .fan-card img { height: 100%; }
+  .life-deck { margin-top: 24px; }
 
   /* Contact / footer */
   .pre-contact { padding: 22px 22px 84px; }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Sparkle from './Sparkle';
+import useIsMobile from '../hooks/useIsMobile';
+import SwipeDeck from './SwipeDeck';
 
 const scrollTo = (id) => {
   const el = document.getElementById(id);
@@ -19,6 +21,7 @@ const SPREAD = 42; // px neighbours move away from the hovered card
 
 const Hero = () => {
   const [hover, setHover] = useState(null);
+  const isMobile = useIsMobile();
 
   return (
     <section className="hero grid-bg" id="top">
@@ -34,38 +37,49 @@ const Hero = () => {
         </p>
       </div>
 
-      <div className="cards-row">
-        {CARDS.map((c, i) => {
-          let shift = 0;
-          let lift = 0;
-          if (hover !== null) {
-            if (i < hover) shift = -SPREAD;
-            else if (i > hover) shift = SPREAD;
-            else lift = -18;
-          }
-          const transform = `translate(calc(-50% + ${shift}px), ${lift}px) rotate(${c.rot}deg)`;
-          return (
-            <div
-              key={i}
-              className="hcard"
-              onMouseEnter={() => setHover(i)}
-              onMouseLeave={() => setHover(null)}
-              style={{
-                left: `${c.left}%`,
-                top: c.top,
-                width: c.w,
-                transform,
-                zIndex: hover === i ? 40 : c.z,
-                animationDelay: `${Math.abs(i - 2) * 90}ms`,
-                '--enter-x': `${(2 - i) * 46}px`,
-                '--rot': `${c.rot}deg`,
-              }}
-            >
-              <img src={c.src} alt="" draggable="false" />
-            </div>
-          );
-        })}
-      </div>
+      {isMobile ? (
+        <SwipeDeck
+          className="hero-deck"
+          cardWidth={260}
+          deckHeight={380}
+          items={CARDS.map((c, i) => (
+            <img key={i} src={c.src} alt="" draggable="false" />
+          ))}
+        />
+      ) : (
+        <div className="cards-row">
+          {CARDS.map((c, i) => {
+            let shift = 0;
+            let lift = 0;
+            if (hover !== null) {
+              if (i < hover) shift = -SPREAD;
+              else if (i > hover) shift = SPREAD;
+              else lift = -18;
+            }
+            const transform = `translate(calc(-50% + ${shift}px), ${lift}px) rotate(${c.rot}deg)`;
+            return (
+              <div
+                key={i}
+                className="hcard"
+                onMouseEnter={() => setHover(i)}
+                onMouseLeave={() => setHover(null)}
+                style={{
+                  left: `${c.left}%`,
+                  top: c.top,
+                  width: c.w,
+                  transform,
+                  zIndex: hover === i ? 40 : c.z,
+                  animationDelay: `${Math.abs(i - 2) * 90}ms`,
+                  '--enter-x': `${(2 - i) * 46}px`,
+                  '--rot': `${c.rot}deg`,
+                }}
+              >
+                <img src={c.src} alt="" draggable="false" />
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       <button
         className="btn-terra hero-btn"

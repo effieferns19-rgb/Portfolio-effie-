@@ -37,16 +37,16 @@ export const WORK = [
 
 export const TIMELINE = [
   {
-    badge: '2015 – 2017',
-    title: 'BFA Applied Arts, Goa College of Art.',
-    desc: 'Built a foundation in graphic design, visual systems, typography and design storytelling.',
-    photos: ['/images/tl_bfa.jpg'],
-    caption: "Batch of '21",
+    badge: 'Feb 2025 – Present',
+    title: 'UI/UX Designer - Kilowott, Goa',
+    desc: 'Currently designing products and experiences, continually building on this foundation',
+    photos: ['/images/kw_team.jpg'],
+    caption: 'Design team, KW',
   },
   {
-    badge: '2021 – 2022',
-    title: 'Freelance Graphic Designer',
-    desc: "Freelancing raised questions about user needs and behaviour that visual design alone couldn't answer",
+    badge: 'Jul – Nov 2024',
+    title: 'Assistant Researcher, UNESCO State of Education Report 2024',
+    desc: "Assisted in research and developing various research methodologies to organize vast information effectively for UNESCO's State of Education Report, focused on arts and culture education",
     photos: [],
     caption: '',
   },
@@ -58,18 +58,18 @@ export const TIMELINE = [
     caption: 'SMI Bengaluru',
   },
   {
-    badge: 'Jul – Nov 2024',
-    title: 'Assistant Researcher, UNESCO State of Education Report 2024',
-    desc: "Assisted in research and developing various research methodologies to organize vast information effectively for UNESCO's State of Education Report, focused on arts and culture education",
+    badge: '2021 – 2022',
+    title: 'Freelance Graphic Designer',
+    desc: "Freelancing raised questions about user needs and behaviour that visual design alone couldn't answer",
     photos: [],
     caption: '',
   },
   {
-    badge: 'Feb 2025 – Present',
-    title: 'UI/UX Designer - Kilowott, Goa',
-    desc: 'Currently designing products and experiences, continually building on this foundation',
-    photos: ['/images/kw_team.jpg'],
-    caption: 'Design team, KW',
+    badge: '2015 – 2017',
+    title: 'BFA Applied Arts, Goa College of Art.',
+    desc: 'Built a foundation in graphic design, visual systems, typography and design storytelling.',
+    photos: ['/images/tl_bfa.jpg'],
+    caption: "Batch of '21",
   },
 ];
 
