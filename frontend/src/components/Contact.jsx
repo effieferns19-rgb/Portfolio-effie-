@@ -11,7 +11,7 @@ const Contact = () => {
       </div>
       <section className="contact" id="contact" style={{ backgroundImage: 'url(/images/footer_sky.png)' }}>
         <p className="c-lead">
-          If you’re looking for a designer who’s curious, thoughtful, and always up for a challenge — let’s talk.
+          If you’re looking for a designer who’s curious, thoughtful, and always up for a challenge.
         </p>
         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
           <button className="btn-terra" data-testid="contact-hire-me-btn">Hire me!</button>

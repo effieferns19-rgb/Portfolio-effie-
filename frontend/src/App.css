@@ -126,7 +126,7 @@
 .tl-mobile { display: none; }
 
 /* ===== Life gallery ===== */
-.life { position: relative; z-index: 5; margin-top: -80px; padding: 56px 0 20px; text-align: center; background: transparent; }
+.life { position: relative; z-index: 5; margin-top: -20px; padding: 56px 0 20px; text-align: center; background: transparent; }
 .life h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(30px, 4vw, 52px); margin: 0 auto; line-height: 1.14; max-width: 760px; }
 .life h2 .hl { background: var(--pink); padding: 2px 14px; }
 .life-fan { position: relative; width: min(1000px, 96vw); height: 380px; margin: 12px auto 0; }
@@ -213,7 +213,7 @@
   /* Timeline — left-aligned vertical list, no images */
   .tl-sticky { padding: 34px 0 22px; }
   .tl-mobile { gap: 0; padding: 8px 26px 0; align-items: stretch; }
-  .tl-mobile .tl-head { margin-bottom: 14px; text-align: left; }
+  .tl-mobile .tl-head { margin-bottom: 34px; text-align: left; }
   .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.12; }
   .tlm-item { display: block; position: relative; padding: 0 0 28px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
   .tlm-item:last-child { border-left-color: transparent; padding-bottom: 4px; }
@@ -221,7 +221,7 @@
   .tlm-photo { display: none !important; }
 
   /* Life gallery — swipe deck */
-  .life { margin-top: 0; padding: 34px 0 14px; }
+  .life { margin-top: 26px; padding: 34px 0 14px; }
   .life h2 { font-size: 30px; padding: 0 24px; line-height: 1.16; }
   .life-deck { margin-top: 22px; }
 
