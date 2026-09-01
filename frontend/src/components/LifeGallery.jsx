@@ -26,7 +26,7 @@ const LifeGallery = () => {
         <SwipeDeck
           className="life-deck"
           cardWidth={244}
-          deckHeight={390}
+          deckHeight={352}
           items={LIFE_PHOTOS.map((src, i) => (
             <div key={i} className="deck-polaroid">
               <img src={src} alt="" draggable="false" />

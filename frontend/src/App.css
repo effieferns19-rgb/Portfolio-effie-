@@ -103,7 +103,7 @@
     linear-gradient(to bottom, rgba(31,29,29,0.045) 1px, transparent 1px);
   background-size: 96px 96px; }
 .tl-fixedhead { position: absolute; left: 80px; top: 8vh; width: 620px; z-index: 6; }
-.tl-strip { position: absolute; left: 0; top: calc(50% - 230px); width: 2800px; height: 640px; will-change: transform; }
+.tl-strip { position: absolute; left: 0; top: calc(50% - 270px); width: 2800px; height: 640px; will-change: transform; }
 .tl-strip-svg { position: absolute; left: 0; top: 0; width: 2800px; height: 640px; overflow: visible; }
 .timeline h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(32px, 4.4vw, 52px); margin: 0; white-space: nowrap; }
 .timeline .tl-desc { font-family: var(--sans); font-size: 15px; color: #4a453e; max-width: 330px; margin: 16px 0 0; line-height: 1.55; }
@@ -121,6 +121,8 @@
 .tl-photo .cap { position:absolute; left:0; right:0; bottom:7px; text-align:center; font-family: var(--serif); font-style: italic; font-size: 12px; color:#4a453e; }
 .tl-dot { position: absolute; width: 14px; height: 14px; border-radius: 999px; background: var(--terra); z-index: 3; opacity: 0.35; transition: opacity .6s ease; }
 .tl-dot.on { opacity: 1; }
+.tl-ready { position: absolute; display: block; height: auto; opacity: 0.3; transition: opacity .6s ease; }
+.tl-ready.on { opacity: 1; }
 .tl-mobile { display: none; }
 
 /* ===== Life gallery ===== */
@@ -209,22 +211,22 @@
   .work-card img { border-radius: 16px; }
 
   /* Timeline — left-aligned vertical list, no images */
-  .tl-sticky { padding: 48px 0 24px; }
+  .tl-sticky { padding: 34px 0 22px; }
   .tl-mobile { gap: 0; padding: 8px 26px 0; align-items: stretch; }
-  .tl-mobile .tl-head { margin-bottom: 24px; text-align: left; }
+  .tl-mobile .tl-head { margin-bottom: 14px; text-align: left; }
   .tl-mobile .tl-head h2 { font-size: 30px; white-space: normal; line-height: 1.12; }
-  .tlm-item { display: block; position: relative; padding: 0 0 30px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
+  .tlm-item { display: block; position: relative; padding: 0 0 28px 26px; margin-left: 5px; border-left: 2px dotted #C9B79A; }
   .tlm-item:last-child { border-left-color: transparent; padding-bottom: 4px; }
   .tlm-item::before { content: ''; position: absolute; left: -8px; top: 3px; width: 13px; height: 13px; border-radius: 999px; background: var(--terra); box-shadow: 0 0 0 4px var(--cream); }
   .tlm-photo { display: none !important; }
 
   /* Life gallery — swipe deck */
-  .life { margin-top: 0; padding: 36px 0 34px; }
+  .life { margin-top: 0; padding: 34px 0 14px; }
   .life h2 { font-size: 30px; padding: 0 24px; line-height: 1.16; }
-  .life-deck { margin-top: 24px; }
+  .life-deck { margin-top: 22px; }
 
   /* Contact / footer */
-  .pre-contact { padding: 22px 22px 84px; }
+  .pre-contact { padding: 8px 22px 78px; }
   .pre-contact p { font-size: 15px; }
   .contact { aspect-ratio: auto; min-height: 540px; padding: 0 22px; }
   .contact .c-lead { margin: 26% auto 22px; font-size: 15px; }

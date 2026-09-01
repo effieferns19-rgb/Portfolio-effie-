@@ -31,7 +31,10 @@ Key files:
 - Removed inline images between text in the About ("Hello! I'm Effie") section (desktop + mobile).
 - Mobile layout (`@media max-width:768px`, desktop untouched): Hero + Life gallery use swipeable stacked card decks (`SwipeDeck.jsx` + `useIsMobile.js` hook, rendered only on mobile); Featured Work non-sticky stacked cards; footer heights adjusted.
 - Timeline order REVERSED (Kilowott first → BFA last) on desktop & mobile via `TIMELINE` data reorder (photos land on Kilowott/MDes/BFA, matching reference).
-- Mobile timeline: images hidden; clean left-aligned vertical timeline (dotted left rail + terra dots) with badge/title/desc stacked.
+- Mobile timeline: images hidden; clean left-aligned vertical timeline (dotted left rail + terra dots) with badge/title/desc stacked; item titles 17px.
+- Footer socials: Email → mailto:effieferns19@gmail.com, LinkedIn → real profile URL, Notion replaced with Phone icon → tel:+919370777682. testids: footer-email-link / footer-linkedin-link / footer-phone-link.
+- Kilowott timeline photo replaced with supplied finished polaroid (`kw_team_new.png`), rendered via `readymade` flag (no duplicate frame/caption; `.tl-ready` style).
+- Desktop timeline reveal: first milestone (Kilowott) shown at scroll start (`effProgress = startFrac + progress*(1-startFrac)`); scroll reveals from 2nd onward. Title→timeline gap reduced (`.tl-strip` top `50% - 270px`).
 - Deployment readiness health check: PASS.
 
 ## Backlog / Roadmap

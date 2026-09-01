@@ -72,10 +72,13 @@ const Timeline = () => {
 
   const maxShift = Math.max(STRIP_W - vw, 0);
   const tx = -progress * maxShift;
+  // Keep the first milestone already revealed at scroll start; scrolling reveals from the 2nd onward.
+  const startFrac = fracs ? fracs[0] : POS[0].anchor / STRIP_W;
+  const effProgress = startFrac + progress * (1 - startFrac);
   // A milestone is "reached" once the drawing line passes its dot; it then stays at full opacity.
   const reached = (i) => {
     const th = fracs ? fracs[i] - 0.01 : POS[i].anchor / STRIP_W;
-    return progress >= th;
+    return effProgress >= th;
   };
 
   return (
@@ -101,7 +104,7 @@ const Timeline = () => {
                     strokeWidth="30"
                     strokeLinecap="round"
                     pathLength="1"
-                    strokeDasharray={`${Math.max(progress, 0.0001)} 1`}
+                    strokeDasharray={`${Math.max(effProgress, 0.0001)} 1`}
                   />
                 </mask>
               </defs>
@@ -115,16 +118,26 @@ const Timeline = () => {
               return (
                 <React.Fragment key={i}>
                   <span className={`tl-dot ${on}`} style={{ left: p.dot.x - 7, top: p.dot.y + YOFF - 7 }} />
-                  {p.photos.map((ph, j) => (
-                    <div
-                      key={j}
-                      className={`tl-photo ${on}`}
-                      style={{ left: ph.x, top: ph.y + YOFF, width: ph.w, height: ph.h, transform: `rotate(${ph.rot}deg)`, zIndex: ph.peek ? 1 : 2 }}
-                    >
-                      <img src={t.photos[j]} alt="" />
-                      {!ph.peek && t.caption && <span className="cap">{t.caption}</span>}
-                    </div>
-                  ))}
+                  {p.photos.map((ph, j) =>
+                    t.readymade ? (
+                      <img
+                        key={j}
+                        className={`tl-ready ${on}`}
+                        src={t.photos[j]}
+                        alt={t.caption}
+                        style={{ left: ph.x - 12, top: ph.y - 14, width: ph.w + 30 }}
+                      />
+                    ) : (
+                      <div
+                        key={j}
+                        className={`tl-photo ${on}`}
+                        style={{ left: ph.x, top: ph.y + YOFF, width: ph.w, height: ph.h, transform: `rotate(${ph.rot}deg)`, zIndex: ph.peek ? 1 : 2 }}
+                      >
+                        <img src={t.photos[j]} alt="" />
+                        {!ph.peek && t.caption && <span className="cap">{t.caption}</span>}
+                      </div>
+                    )
+                  )}
                   <div
                     className={`tl-node ${on}`}
                     style={{ left: p.node.x, top: p.node.y + YOFF, width: p.node.w, textAlign: p.node.align }}
@@ -157,7 +170,7 @@ const Timeline = () => {
             )}
             <div>
               <span className="tl-badge active">{t.badge}</span>
-              <h4 style={{ fontFamily: 'var(--serif)', fontWeight: 700, color: 'var(--terra)', margin: '10px 0 6px', fontSize: 20 }}>{t.title}</h4>
+              <h4 style={{ fontFamily: 'var(--serif)', fontWeight: 700, color: 'var(--terra)', margin: '8px 0 6px', fontSize: 17, lineHeight: 1.2 }}>{t.title}</h4>
               <p style={{ fontFamily: 'var(--sans)', fontSize: 14, color: '#6a6459', margin: 0, lineHeight: 1.5 }}>{t.desc}</p>
             </div>
           </div>

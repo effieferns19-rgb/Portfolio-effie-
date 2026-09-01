@@ -40,8 +40,9 @@ export const TIMELINE = [
     badge: 'Feb 2025 – Present',
     title: 'UI/UX Designer - Kilowott, Goa',
     desc: 'Currently designing products and experiences, continually building on this foundation',
-    photos: ['/images/kw_team.jpg'],
+    photos: ['/images/kw_team_new.png'],
     caption: 'Design team, KW',
+    readymade: true,
   },
   {
     badge: 'Jul – Nov 2024',

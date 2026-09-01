@@ -1,14 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin } from 'lucide-react';
-
-const NotionIcon = ({ size = 24 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="3" />
-    <path d="M8 8v8" />
-    <path d="M8 8l7 8" />
-    <path d="M15 8v8" />
-  </svg>
-);
+import { Mail, Linkedin, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -27,9 +18,9 @@ const Contact = () => {
         </a>
         <h2>Let’s build together?</h2>
         <div className="socials">
-          <a href="mailto:effie@example.com" aria-label="Email"><Mail size={24} /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={24} /></a>
-          <a href="https://notion.so" target="_blank" rel="noreferrer" aria-label="Notion"><NotionIcon size={24} /></a>
+          <a href="mailto:effieferns19@gmail.com" aria-label="Email" data-testid="footer-email-link"><Mail size={24} /></a>
+          <a href="https://www.linkedin.com/in/effie-fernandes-429b801b8/" target="_blank" rel="noreferrer" aria-label="LinkedIn" data-testid="footer-linkedin-link"><Linkedin size={24} /></a>
+          <a href="tel:+919370777682" aria-label="Call" data-testid="footer-phone-link"><Phone size={24} /></a>
         </div>
         <p className="copyright">© 2026 Effie. All rights reserved.</p>
       </section>
