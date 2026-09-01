@@ -35,6 +35,7 @@ Key files:
 - Footer socials: Email → mailto:effieferns19@gmail.com, LinkedIn → real profile URL, Notion replaced with Phone icon → tel:+919370777682. testids: footer-email-link / footer-linkedin-link / footer-phone-link.
 - Kilowott timeline photo replaced with supplied finished polaroid (`kw_team_new.png`), rendered via `readymade` flag (no duplicate frame/caption; `.tl-ready` style).
 - Desktop timeline reveal: first milestone (Kilowott) shown at scroll start (`effProgress = startFrac + progress*(1-startFrac)`); scroll reveals from 2nd onward. Title→timeline gap reduced (`.tl-strip` top `50% - 270px`).
+- Featured Work case study cards replaced with new supplied images (proj_industrisalg/proj_norweh/proj_hotel .png, 1333×804); mobile hero "Design Journey" title 52px; desktop `.life` padding reduced to 24/6.
 - Deployment readiness health check: PASS.
 
 ## Backlog / Roadmap

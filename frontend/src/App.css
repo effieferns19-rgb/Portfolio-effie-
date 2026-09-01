@@ -126,7 +126,7 @@
 .tl-mobile { display: none; }
 
 /* ===== Life gallery ===== */
-.life { position: relative; z-index: 5; margin-top: -20px; padding: 56px 0 20px; text-align: center; background: transparent; }
+.life { position: relative; z-index: 5; margin-top: -20px; padding: 24px 0 6px; text-align: center; background: transparent; }
 .life h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: clamp(30px, 4vw, 52px); margin: 0 auto; line-height: 1.14; max-width: 760px; }
 .life h2 .hl { background: var(--pink); padding: 2px 14px; }
 .life-fan { position: relative; width: min(1000px, 96vw); height: 380px; margin: 12px auto 0; }
@@ -189,6 +189,7 @@
 
   /* Hero — swipe deck */
   .hero { padding-top: 128px; }
+  .hero h1 { font-size: 52px; }
   .hero .welcome { font-size: 18px; }
   .hero .sub { font-size: 15px; max-width: 100%; padding: 0 26px; }
   .hero-deck { margin-top: 30px; }
